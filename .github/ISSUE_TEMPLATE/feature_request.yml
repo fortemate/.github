@@ -1,18 +1,43 @@
 name: Feature request
-description: Suggest an improvement or a new capability
-labels: ["enhancement"]
+description: Propose a new capability or an improvement
+type: Feature
 body:
   - type: textarea
-    id: problem
+    id: context
     attributes:
-      label: The problem
-      description: What can't you do today, or what is harder than it should be?
+      label: Context
+      description: Explain the problem, user need, or opportunity behind this request.
     validations:
       required: true
   - type: textarea
-    id: proposal
+    id: objective
     attributes:
-      label: Proposed solution
-      description: How you imagine it working. Alternatives you considered are welcome too.
+      label: Objective
+      description: Describe the outcome to achieve, without prescribing unnecessary implementation details.
+    validations:
+      required: true
+  - type: textarea
+    id: definition-of-done
+    attributes:
+      label: Definition of Done
+      description: List the verifiable acceptance criteria for closing this issue.
+      placeholder: |
+        - [ ] The new behavior is implemented
+        - [ ] Automated tests cover it where appropriate
+        - [ ] User-facing or API documentation is updated
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe workarounds or alternative approaches you considered.
+    validations:
+      required: false
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add mockups, examples, links, or other useful information.
     validations:
       required: false
