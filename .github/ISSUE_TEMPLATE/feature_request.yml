@@ -1,6 +1,7 @@
 name: Feature request
 description: Propose a new capability or an improvement
 type: Feature
+projects: ["fortemate/1"]
 body:
   - type: textarea
     id: context
