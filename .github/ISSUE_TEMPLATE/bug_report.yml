@@ -1,6 +1,7 @@
 name: Bug report
 description: Report an unexpected problem or incorrect behavior
 type: Bug
+projects: ["fortemate/1"]
 body:
   - type: markdown
     attributes:
