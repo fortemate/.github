@@ -1,6 +1,7 @@
 name: Task
 description: Propose a specific piece of engineering or maintenance work
 type: Task
+projects: ["fortemate/1"]
 body:
   - type: textarea
     id: context
