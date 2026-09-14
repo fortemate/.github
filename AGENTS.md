@@ -37,3 +37,81 @@ Agent guidance for the `fortemate/.github` repository.
 - The human owner reviews, approves and merges pull requests. Agents never merge pull requests or execute releases.
 
 <!-- /dc-shared:issue-management -->
+
+## Definition of Done — before every commit
+
+<!-- dc-shared:definition-of-done v1 — keep identical across Fortemate Scala repositories -->
+
+1. Format: `mise run format`. If `mise` is not on PATH: `~/.local/bin/mise exec -- sbt scalafmtAll`.
+2. Gate: `mise run check` — the same command CI runs. If part of it cannot run in your sandbox (for
+   example Docker for Testcontainers), run `mise exec -- sbt 'scalafmtCheckAll; Test/compile'` plus every
+   suite that can run, and list what you skipped in the pull request.
+3. Never publish unformatted Scala or code that does not compile: CI rejects both, and every red run
+   costs a review cycle.
+
+Sandboxed agents (Jules): the toolchain is provisioned by `scripts/jules-setup.sh` (Java, sbt, scalafmt
+via mise). If a tool is missing, run `bash scripts/jules-setup.sh` instead of installing tools ad hoc.
+
+<!-- /dc-shared:definition-of-done -->
+
+## Git & PR workflow
+
+<!-- dc-shared:git-pr v4 — keep identical across Fortemate repositories -->
+
+- Follow the branch-name and Issue-link contract in `dc-shared:issue-management`. Agents that
+  choose a branch name follow its canonical grammar; integration-owned branch names are accepted
+  only when the target repository's live PR policy allows them.
+- **The branch type chooses the release-notes section** — `.github/labeler.yml` turns it into a
+  PR label and `.github/release.yml` groups by that label. `task/` is issue-driven work and counts
+  as a feature, so a fix belongs on `bug/` even when it closes an issue; `chore/` is the grab-bag
+  and files under "Other Changes". A type that maps to no label mis-files the whole PR: play-api
+  v0.16.0 shipped ten features under 📚 Documentation because every branch was `task/` (which
+  mapped to nothing) while every PR touched AGENTS.md (which mapped to `documentation`).
+- Before editing anything: run `git status`. If the tree has unrelated uncommitted work,
+  stop and report — never let it bleed into your commit.
+- Stage specific files by name. `git add -A` / `git add .` are forbidden.
+- Commits, PR descriptions, issues, and review replies are English-only. Commit subjects
+  use conventional style: `feat: …`, `fix: …`, `docs: …`, `test: …`, `chore: …`.
+- Before opening a PR: make the repo check task pass locally. Never pipe test output
+  through `grep`/`head` — it masks exit codes.
+- After opening a PR: for substantial PRs comment `@coderabbitai review`, wait a few minutes,
+  then triage every bot comment on its merits — address or rebut with evidence, never apply
+  blindly. Gemini Code Assist is disabled in these repositories; do not wait for it.
+- The human owner reviews, approves, and merges. Never merge a PR, never push tags.
+- Split large work into small, reviewable PRs.
+
+<!-- /dc-shared:git-pr -->
+
+## Security & boundaries
+
+<!-- dc-shared:security v3 — keep identical across Fortemate repositories -->
+
+- Never print, log, or commit secrets. Local secrets live only in gitignored files
+  (e.g. `.env.local`, `mise.local.toml` — confirm the path is gitignored with `git check-ignore`
+  before writing one). Never bypass Git hooks (`--no-verify`).
+- Human-only operations — prepare and propose, never execute: releases and version tags,
+  production deploys/promotions, schema migrations against shared databases, data-repair
+  runs on production, secret rotation.
+- Never add private infrastructure details (hostnames, IP addresses, cloud identifiers,
+  topology, credentials, tokens) to code, docs, commits, or PRs — regardless of the
+  repository's visibility. A private repository is not a safe place for them either;
+  operator-specific details belong in an approved private runbook.
+
+<!-- /dc-shared:security -->
+
+## Model routing
+
+<!-- dc-shared:routing v2 — keep identical across Fortemate repositories -->
+
+Route work by required capability instead of defaulting to the strongest model:
+
+- **Frontier**: architecture, cross-repo contracts, high blast radius (schema, public API,
+  release pipeline), ambiguous problems.
+- **Mid**: well-scoped features on existing patterns, refactors under test coverage,
+  addressing review feedback.
+- **Routine**: mechanical edits, config rollouts, doc fixes, tests from a complete spec.
+
+Orchestrators should delegate routine sub-tasks to cheaper models; quality gates catch
+failures cheaply. When in doubt, escalate one tier — reviewer time costs more than tokens.
+
+<!-- /dc-shared:routing -->
