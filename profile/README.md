@@ -7,7 +7,7 @@ and the game ends by capturing the king — no checks, no checkmate, pure calcul
 risk. Fortemate is the open home of this game family: free to play, no ads, no
 registration required.
 
-🎲 **[Play now](https://fortemate.com)** · 📖 [How to play](https://play.jc.id.lv/rules) · 🤖 [Build a bot](https://bots.jc.id.lv)
+🎲 **[Play now](https://fortemate.com)** · 📖 [How to play](https://play.jc.id.lv/rules) · 🤖 [Build a bot](https://bots.jc.id.lv) · 💬 [Community discussions](https://github.com/orgs/fortemate/discussions)
 
 ## Why it's different
 

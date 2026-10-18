@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Fortemate community discussions
+    url: https://github.com/orgs/fortemate/discussions
+    about: Ask questions, share playtest feedback, or suggest improvements for any Fortemate product.
   - name: Bot API documentation
     url: https://bots.jc.id.lv
     about: Protocol reference and starter kits for building your own bot.
