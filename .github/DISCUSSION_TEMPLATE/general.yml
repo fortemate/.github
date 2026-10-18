@@ -1,0 +1,41 @@
+# The organization forum covers all Fortemate products. Free-text version and
+# device fields keep the form useful across products and future releases.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tell us about one finding or experience per discussion: something that broke, something that confused you, or something you enjoyed.
+
+        Playing Dice Chess for Fire TV without a GitHub account? Use the [anonymous feedback form](https://dicechess-tv.fortemate.com/feedback/).
+  - type: dropdown
+    id: product
+    attributes:
+      label: Which Fortemate product is this about?
+      options:
+        - Dice Chess for Fire TV
+        - Dice Chess in the browser
+        - Bot API or a bot integration
+        - Another Fortemate project
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or build
+      description: The release, build number, or source commit, if known.
+    validations:
+      required: false
+  - type: input
+    id: device
+    attributes:
+      label: Device or environment
+      description: For example, a Fire TV Stick, the Vega Virtual Device, or your browser and operating system.
+    validations:
+      required: false
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened?
+      description: What you were doing, what happened, and what you expected. A screenshot can help.
+    validations:
+      required: true

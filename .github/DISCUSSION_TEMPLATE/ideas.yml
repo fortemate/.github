@@ -1,0 +1,29 @@
+body:
+  - type: markdown
+    attributes:
+      value: |
+        What would make Fortemate better? Please post one idea per discussion, so others can vote for it and we can follow up.
+  - type: dropdown
+    id: product
+    attributes:
+      label: Which Fortemate product is this about?
+      options:
+        - Dice Chess for Fire TV
+        - Dice Chess in the browser
+        - Bot API or a bot integration
+        - Another Fortemate project
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you change?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What made you think of it?
+      description: Describe the situation where the change would help.
+    validations:
+      required: false

@@ -1,0 +1,37 @@
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ask for help with installation, gameplay, or development. For Dice Chess for Fire TV, start with [Get the game](https://dicechess-tv.fortemate.com/play/beta/).
+  - type: dropdown
+    id: product
+    attributes:
+      label: Which Fortemate product is this about?
+      options:
+        - Dice Chess for Fire TV
+        - Dice Chess in the browser
+        - Bot API or a bot integration
+        - Another Fortemate project
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or build
+      description: The release, build number, or source commit, if known.
+    validations:
+      required: false
+  - type: input
+    id: device
+    attributes:
+      label: Device or environment
+      description: For example, your Fire TV model, Virtual Device platform, or browser and operating system.
+    validations:
+      required: false
+  - type: textarea
+    id: question
+    attributes:
+      label: What did you try, and what happened?
+      description: Include what you need help with and the steps you already tried.
+    validations:
+      required: true

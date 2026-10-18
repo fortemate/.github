@@ -1,5 +1,19 @@
 # Support
 
+## Community discussions
+
+Ask questions, share playtest experiences, and suggest improvements in
+[Fortemate community discussions](https://github.com/orgs/fortemate/discussions).
+The forum covers Dice Chess for Fire TV, the browser game, and bot development.
+Include the product, version or build, and device when relevant.
+
+- **General:** playtest reports, confusing moments, and general conversation.
+- **Ideas:** suggestions for improving Fortemate.
+- **Q&A:** help with installation, gameplay, or development.
+
+For Dice Chess for Fire TV feedback without a GitHub account, use the
+[anonymous form](https://dicechess-tv.fortemate.com/feedback/).
+
 ## Playing the game
 
 - Rules and how-to-play: <https://play.jc.id.lv/rules>
