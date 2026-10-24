@@ -31,9 +31,9 @@ self-service: add yourself to `.github/cla-signatures.json` in the same pull
 request — the `CI: CLA` check verifies it automatically. You keep the copyright to
 your work; the CLA is what keeps the project's open-core model legally sound.
 
-The starter kits (`dicechess-bot-python`, `dicechess-bot-typescript`,
-`dicechess-bot-random`, `dicechess-reference-bot`, `dicechess-bot-runtime`) are
-**MIT** — fork freely, no CLA required.
+The starter kits and developer tools (`dicechess-reference-bot`, `dicechess-bot-runtime`,
+`dicechess-bot-java`, `vega-vvd-driver`, `proofgate`) are
+**MIT** or **Apache-2.0** — fork freely, no CLA required.
 
 **Building your own bot does not require signing anything.** The CLA applies only
 to contributions sent back to these repositories.
