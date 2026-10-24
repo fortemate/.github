@@ -16,14 +16,15 @@ For Dice Chess for Fire TV feedback without a GitHub account, use the
 
 ## Playing the game
 
-- Rules and how-to-play: <https://play.jc.id.lv/rules>
-- The game itself: <https://fortemate.com>
+- Rules and how-to-play: <https://fortemate.com/rules>
+- The browser game: <https://fortemate.com>
+- Dice Chess for Fire TV: <https://dicechess-tv.fortemate.com/>
 
 ## Building a bot
 
 - Bot API documentation, protocol reference, and starter kits: <https://bots.jc.id.lv>
 - Questions and problems with the Bot API: open an issue on
-  [dicechess-play-api](https://github.com/rabestro/dicechess-play-api/issues).
+  [dicechess-play-api](https://github.com/fortemate/dicechess-play-api/issues).
 
 ## Bugs and feature requests
 

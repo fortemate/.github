@@ -1,41 +1,42 @@
 # Fortemate
 
-**Free, open-source platform for probabilistic chess.**
+**Connected TV (Amazon Vega OS / Fire TV) & cross-platform engineering studio.**
 
-Dice Chess is chess where three dice decide which piece types may move on each turn,
-and the game ends by capturing the king — no checks, no checkmate, pure calculated
-risk. Fortemate is the open home of this game family: free to play, no ads, no
-registration required.
+Fortemate builds production Connected TV applications, high-performance cross-platform engines (Scala 3 / JVM / JS / WebAssembly), and developer automation tools — alongside the open-source **Dice Chess** platform.
 
-🎲 **[Play now](https://fortemate.com)** · 📖 [How to play](https://play.jc.id.lv/rules) · 🤖 [Build a bot](https://bots.jc.id.lv) · 💬 [Community discussions](https://github.com/orgs/fortemate/discussions)
+📺 **[Dice Chess for Fire TV](https://dicechess-tv.fortemate.com/)** · 🎲 **[Play in browser](https://fortemate.com)** · 📖 [How to play](https://fortemate.com/rules) · 🤖 [Build a bot](https://bots.jc.id.lv) · 💬 [Discussions](https://github.com/orgs/fortemate/discussions)
 
-## Why it's different
+## Connected TV & Vega OS Engineering (B2B Consulting)
 
-- **Provably fair dice.** Every roll uses server CSPRNG wrapped in commit–reveal:
-  the commitment is published before the game, the seed is revealed after, and any
-  finished game can be verified independently. No trust required.
-- **Open Bot API.** Register your own bot over a simple webhook or polling protocol,
-  climb the public Glicko-2 ladder, and play against humans. Starter kits available
-  in Java, Python, and TypeScript.
-- **Skill vs. luck, measured.** A game with dice deserves analytics that separate
-  what you played from what you rolled — that is where this platform is headed.
+We help media companies, game studios, and digital agencies migrate and build applications for **Amazon Vega OS (Fire TV)** and **React Native Multi-TV** platforms:
 
-## Repositories
+- **Fire OS to Vega OS Migration & Multi-TV Monorepos:** Porting existing Android/Fire OS and React applications to React Native for Vega (0.83 / Vega SDK 0.24) and shared Multi-TV architectures (Fire TV, Android TV, tvOS, Web).
+- **10-Foot UI, Performance & Accessibility:** Non-blocking background computation via Hermes worklet runtimes (`@amazon-devices/react-native-worklets`) and MMKV state bridges, deterministic D-pad spatial navigation, `useKeplerBackHandler` lifecycle handling, and full **VoiceView** screen-reader compliance for Amazon Appstore certification.
+- **Automated Device Verification & AI Tooling:** Scriptable testing, frame/audio capture, and CI/CD verification on the Vega Virtual Device and physical Fire TV hardware using our open-source [`vega-vvd-driver`](https://github.com/fortemate/vega-vvd-driver) and [`proofgate`](https://github.com/fortemate/proofgate).
+
+📩 **Inquiries & B2B consulting:** [**hello@fortemate.com**](mailto:hello@fortemate.com) · [Jegors Čemisovs on LinkedIn](https://www.linkedin.com/in/jegors-cemisovs/)
+
+## Featured Repositories
+
+### Connected TV & Developer Tooling
 
 | Repository | What it is |
 |---|---|
-| [dicechess-bot-java](https://github.com/fortemate/dicechess-bot-java) | Java 25 baseline house bot and reference starter template |
-| [dicechess-engine-scala](https://github.com/rabestro/dicechess-engine-scala) | The rules engine: Scala 3, cross-compiled to JVM and Scala.js/WASM, with a Java-facing API |
-| [dicechess-play](https://github.com/rabestro/dicechess-play) | The web app: SvelteKit PWA, playable offline against local bots |
-| [dicechess-play-api](https://github.com/rabestro/dicechess-play-api) | Server-authoritative game backend: WebSockets, ratings, Bot API |
-| [dicechess-bot-python](https://github.com/rabestro/dicechess-bot-python) · [dicechess-bot-typescript](https://github.com/rabestro/dicechess-bot-typescript) | MIT starter kits for bot developers |
+| [dicechess-tv](https://github.com/fortemate/dicechess-tv) | Production Amazon Fire TV game built with React Native for Vega (`.vpkg` live on the [Amazon Appstore](https://www.amazon.com/dp/B0HL6K9N47/)): background Hermes worklets, MMKV, D-pad navigation, VoiceView, and adaptive audio |
+| [vega-vvd-driver](https://github.com/fortemate/vega-vvd-driver) | Drive the Vega Virtual Device from scripts and AI agents: remote keys, screenshots, video with sound, frame capture, and an MCP server (MIT) |
+| [proofgate](https://github.com/fortemate/proofgate) | Read-only release and experiment control room with deterministic, human-owned evidence gating |
 
-More repositories are moving into this organization as part of the ongoing brand
-migration.
+### Cross-Platform Game Engine & Web Platform
+
+| Repository | What it is |
+|---|---|
+| [dicechess-engine](https://github.com/fortemate/dicechess-engine) | High-performance Scala 3 rules engine, move generator, and AI search targeting JVM, JavaScript, and WebAssembly |
+| [dicechess-play](https://github.com/fortemate/dicechess-play) | Svelte 5 / SvelteKit Progressive Web App playable in the browser and offline against local bots |
+| [dicechess-play-api](https://github.com/fortemate/dicechess-play-api) | Authoritative real-time multiplayer server: WebSockets, commit–reveal provably fair dice, Glicko-2 rating ladder, and open Bot API |
+| [dicechess-evaluation-playground](https://github.com/fortemate/dicechess-evaluation-playground) | Interactive SvelteKit playground for evaluating Dice Chess positions |
+| [dicechess-bot-runtime](https://github.com/fortemate/dicechess-bot-runtime) · [dicechess-reference-bot](https://github.com/fortemate/dicechess-reference-bot) · [dicechess-bot-java](https://github.com/fortemate/dicechess-bot-java) | Webhook transport runtime (HMAC-SHA256, handshake) and starter templates for Scala 3 and Java 25 |
+| [dicechess-bot-cloudflare](https://github.com/fortemate/dicechess-bot-cloudflare) · [dicechess-bot-gcp-onnx](https://github.com/fortemate/dicechess-bot-gcp-onnx) · [dicechess-bot-azure](https://github.com/fortemate/dicechess-bot-azure) | Serverless and cloud bot deployments (Cloudflare Workers, Google Cloud Run with ONNX, Azure Functions GraalVM Native Image) |
 
 ## Contributing
 
-Contributions are welcome — see the contributing guide in each repository. The
-platform repositories are AGPL-3.0 and require a one-time CLA signature with your
-first pull request; the starter kits are MIT and require nothing. Found a security
-issue? See our [security policy](https://github.com/fortemate/.github/blob/main/SECURITY.md).
+Contributions are welcome — see [CONTRIBUTING.md](https://github.com/fortemate/.github/blob/main/CONTRIBUTING.md) or the guide in each repository. Core platform repositories are licensed under **AGPL-3.0-only** with a Contributor License Agreement (CLA) that preserves open-core commercial licensing; developer tools and bot starter kits are **MIT** or **Apache-2.0**. Found a security issue? See our [security policy](https://github.com/fortemate/.github/blob/main/SECURITY.md).
