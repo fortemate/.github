@@ -54,6 +54,44 @@ is unavailable, follow the repository's setup documentation and report any gate 
 
 <!-- /dc-shared:definition-of-done -->
 
+## Definition of Done - Maven
+
+<!-- dc-shared:definition-of-done-maven v2 — keep identical across Fortemate Maven repositories -->
+
+1. Format: `mise run format` where the repository defines it (Spotless). If `mise` is not on PATH:
+   `~/.local/bin/mise exec -- mvn --batch-mode spotless:apply`.
+2. Gate: `mise run check` — the same Maven goals CI runs (`verify`, or `spotless:check clean test package`).
+   If part of it cannot run in your sandbox, run at least `mise exec -- mvn --batch-mode -DskipTests test-compile`
+   plus every suite that can run, and list what you skipped in the pull request.
+3. Never publish unformatted Java or code that does not compile: CI rejects both, and every red run costs a
+   review cycle.
+
+All agents use the repository-pinned toolchain and documented setup commands. If a required tool
+is unavailable, follow the repository's setup documentation and report any gate that cannot run.
+
+<!-- /dc-shared:definition-of-done-maven -->
+
+## Definition of Done - Gradle Android
+
+<!-- dc-shared:definition-of-done-gradle-android v2 — keep identical across Fortemate Gradle Android repositories -->
+
+1. Initialize the pinned source tree: `git submodule sync --recursive && git submodule update --init --recursive`.
+2. Run the complete locally executable gate: `scripts/jules-verify.sh`. It must include the repository's JVM
+   tests/parity checks and Android compilation/lint tasks. Report every skipped command in the pull request.
+3. Treat Android runtime evidence separately. The required Aurora pull-request CI must pass its emulator and
+   instrumentation jobs. Compilation is not emulator or physical-device validation; never claim otherwise.
+4. Inspect `git status --short` and the diff before committing. Do not commit SDKs, caches, APKs, signing
+   material, `local.properties`, credentials, generated evidence, or unrelated files.
+
+All agents use the repository-pinned toolchain and documented setup commands. If a required tool
+is unavailable, follow the repository's setup documentation and report any gate that cannot run.
+
+Never delegate recursively, apply,
+reapply, or remove the `jules` label, merge a pull request, publish a release, or change repository, signing,
+application, or checkout credentials.
+
+<!-- /dc-shared:definition-of-done-gradle-android -->
+
 ## Git & PR workflow
 
 <!-- dc-shared:git-pr v4 — keep identical across Fortemate repositories -->
