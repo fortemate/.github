@@ -94,7 +94,7 @@ application, or checkout credentials.
 
 ## Git & PR workflow
 
-<!-- dc-shared:git-pr v4 — keep identical across Fortemate repositories -->
+<!-- dc-shared:git-pr v5 — keep identical across Fortemate repositories -->
 
 - Follow the branch-name and Issue-link contract in `dc-shared:issue-management`. Agents that
   choose a branch name follow its canonical grammar; integration-owned branch names are accepted
@@ -112,9 +112,9 @@ application, or checkout credentials.
   use conventional style: `feat: …`, `fix: …`, `docs: …`, `test: …`, `chore: …`.
 - Before opening a PR: make the repo check task pass locally. Never pipe test output
   through `grep`/`head` — it masks exit codes.
-- After opening a PR: for substantial PRs comment `@coderabbitai review`, wait a few minutes,
-  then triage every bot comment on its merits — address or rebut with evidence, never apply
-  blindly. Gemini Code Assist is disabled in these repositories; do not wait for it.
+- For substantial PRs, request a reviewer enabled for the repository. Follow repository-specific
+  review instructions, or the [organization contributing guide](https://github.com/fortemate/.github/blob/main/CONTRIBUTING.md#pull-request-review).
+  Address review findings or explain with evidence why the current change is correct.
 - The human owner reviews, approves, and merges. Never merge a PR, never push tags.
 - Split large work into small, reviewable PRs.
 
