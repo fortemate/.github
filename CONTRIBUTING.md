@@ -22,6 +22,12 @@ requirements (notably a CLA, see below).
 5. Everything written into repositories — code, comments, commits, pull requests,
    issues — is in English.
 
+## Pull request review
+
+In public repositories with CodeRabbit enabled, request a review of substantial changes with
+`@coderabbitai review`. In private repositories, follow the review instructions in the repository.
+Request a maintainer review when no automated reviewer is configured.
+
 ## Licensing and the CLA
 
 The platform repositories (engine, web app, backend, analytics, the Java house
